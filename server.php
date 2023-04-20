@@ -1,50 +1,8 @@
 <?php 
 
-
-    $todos = [
-
-        [
-            "text" => "Fare l'esercizio di oggi",
-            "done" => false,
-        ],
-        [
-            "text" => "Preparare il pranzo",
-            "done" => false,
-        ],
-        [
-            "text" => "Guardare la tv",
-            "done" => false,
-        ],
-        [
-            "text" => "Lavare i piatti",
-            "done" => false,
-        ],
-        [
-            "text" => "Stendere il bucato",
-            "done" => false,
-        ],
-        [
-            "text" => "Lavare la macchina",
-            "done" => false,
-        ],
-        [
-            "text" => "Andare al supermercato",
-            "done" => false,
-        ],
-        [
-            "text" => "Accarezzare il cane",
-            "done" => false,
-        ],
-        [
-            "text" => "Dormire un'oretta",
-            "done" => false,
-        ],
-        [
-            "text" => "Fare merenda",
-            "done" => false,
-        ],
-
-    ];
+    
+    // prendo l'array dal file JSON e la rasformo da stringa formato JSON ad array PHP
+    $todos = json_decode(file_get_contents('todos.json'));
 
 
     // visualizzo il contenuto della pagina come se fosse un file JSON

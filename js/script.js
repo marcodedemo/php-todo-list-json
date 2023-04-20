@@ -16,10 +16,13 @@ createApp({
 
   methods: {
 
+    // funzione che richiama i todos da visualizzare
     getTodos(){
-        axios.get('./server.php').then(res =>{
-            console.log(res.data);
 
+        // chiamata axios (API) al file server.php
+        axios.get('./server.php').then(res =>{
+
+            // imposto l'array di todos uguale alla risposta API
             this.todos = res.data;
         })
     }
@@ -27,6 +30,7 @@ createApp({
   },
 
   mounted() {
+    
     this.getTodos();
   },
 

@@ -29,17 +29,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
+
+
 <body>
 
 
     <div id="app">
 
-        <ul>
-            <li v-for="todo in todos">
-                {{todo.text}}
-            </li>
-        </ul>
+        <div id="container" class="d-flex justify-content-center my-5">
 
+            <ul id="todo-list" class="list-group w-25">
+                
+                <li id="todo-item" class="list-group-item" v-for="todo in todos">
+                    {{todo.text}}
+                </li>
+            </ul>
+            
+        </div>
 
     </div>
 
