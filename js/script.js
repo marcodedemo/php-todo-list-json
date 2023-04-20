@@ -1,6 +1,6 @@
 
 
-import { createApp } from 'vue'
+const { createApp } = Vue;
 
 createApp({
 
@@ -8,8 +8,28 @@ createApp({
 
     return {
         
-        
+        todos: [],
+
 
     }
-  }
+  },
+
+  methods: {
+
+    getTodos(){
+        axios.get('./server.php').then(res =>{
+            console.log(res.data);
+
+            this.todos = res.data;
+        })
+    }
+
+  },
+
+  mounted() {
+    this.getTodos();
+  },
+
+
+
 }).mount('#app')
