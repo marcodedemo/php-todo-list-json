@@ -28,20 +28,31 @@
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 
-<body>
+<body class="bg-secondary">
 
 
     <div id="app">
+        
+        <h1 class="text-center py-5 text-warning">ToDo List</h1>
 
-        <div id="container" class="d-flex justify-content-center my-5">
+        <div id="container" class="d-flex justify-content-center my-3">
 
+
+            <!-- todo list -->
             <ul id="todo-list" class="list-group w-25">
                 
-                <li id="todo-item" class="list-group-item" v-for="todo in todos">
-                    {{todo.text}}
+                <!-- todo single item -->
+                <li id="todo-item" class="list-group-item d-flex justify-content-between align-items-center" v-for="todo in todos">
+                    
+                <div id="text">{{ todo.text }}</div>
+                <div id="delete" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></div>
+
                 </li>
             </ul>
             
