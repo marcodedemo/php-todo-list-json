@@ -23,6 +23,7 @@
         file_put_contents('todos.json',$newTodoJSON);
 
 
+    // altrimenti se è presente un valore di todoToModify nell'array POST 
     }elseif(isset($_POST['todoToModify'])){
 
         // prendo il contenuto del file JSON e lo inserisco in una variabile
@@ -55,8 +56,26 @@
 
         // e reinserisco la stringa JSON ottenuta nel file JSON
         file_put_contents('todos.json',$newTodoJSON);
+
     
-    
+    // altrimenti se è presente un valore di todoToDelete nell'array POST
+    }elseif(isset($_POST['todoToDelete'])){
+
+        // prendo il contenuto del file JSON e lo inserisco in una variabile
+        $todoJSON = file_get_contents('todos.json');
+
+        // creo un array PHP con all'interno la variabile JSON convertita in array PHP
+        $todos = json_decode($todoJSON, true);
+
+        array_splice($todos, $_POST['todoToDelete'],1);
+
+        // riconverto l'array PHP con la modifica in una stringa JSON 
+        $newTodoJSON = json_encode($todos);
+
+        // e reinserisco la stringa JSON ottenuta nel file JSON
+        file_put_contents('todos.json',$newTodoJSON);
+
+
     }else{
 
         
