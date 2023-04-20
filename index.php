@@ -41,7 +41,7 @@
         
         <h1 class="text-center py-5 text-warning">ToDo List</h1>
 
-        <div id="container" class="d-flex justify-content-center my-3">
+        <div id="container" class="d-flex flex-column align-items-center justify-content-center gap-4 my-3">
 
 
             <!-- todo list -->
@@ -55,6 +55,12 @@
 
                 </li>
             </ul>
+
+            <div class="input-group mb-3 w-25">
+                <input type="text" class="form-control" placeholder="Inserisci il nuovo todo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-warning" type="button" id="button-addon2">Inserisci</button>
+            </div>
+
             
         </div>
 
